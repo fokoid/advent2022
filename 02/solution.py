@@ -1,3 +1,8 @@
+def read_lines():
+    with open("input.txt") as f:
+        yield from map(str.strip, f)
+
+
 def plays(lines):
     """Map code to plays:
         A, X - rock
@@ -15,7 +20,7 @@ def corrected_plays(plays):
         1 (Y) - tie
         2 (Z) - win
     """
-    # the second value means lose, draw or win not rock, paper, scizzors
+    # the second value means lose, draw or win not rock, paper, scissors
     for opponent, you in plays:
         yield opponent, (opponent + you - 1) % 3
 
@@ -34,7 +39,5 @@ def solution2(lines):
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
-        print(f"Part 1: {solution1(f)}")
-    with open("input.txt") as f:
-        print(f"Part 2: {solution2(f)}")
+    print(f"Part 1: {solution1(read_lines())}")
+    print(f"Part 2: {solution2(read_lines())}")
