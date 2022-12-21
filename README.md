@@ -11,3 +11,5 @@ along with a reference implementation in Python.
 | 2   | PHP                                                |
 | 3   | Perl                                               |
 | 4   | JavaScript ES6                                     |
+| 5   |                                                    |
+| 6   | C                                                  |
